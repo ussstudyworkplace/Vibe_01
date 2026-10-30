@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Room - Student Productivity App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar for Desktop -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Study Room</div>
+            </div>
+            <ul class="sidebar-menu" id="sidebarMenu"></ul>
+        </aside>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="header-title" id="pageTitle">Dashboard</div>
+            <div class="header-actions">
+                <button class="btn btn-ghost" onclick="openSearch()">🔍</button>
+                <button class="btn btn-ghost" onclick="navigateTo('notifications')">🔔</button>
+                <button class="btn btn-ghost" onclick="navigateTo('settings')">⚙️</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent"></main>
+
+        <!-- Bottom Navigation for Mobile -->
+        <nav class="bottom-nav" id="bottomNav"></nav>
+
+        <!-- Search Modal -->
+        <div class="modal-overlay" id="searchModal">
+            <div class="modal">
+                <div class="modal-header">
+                    <div class="modal-title">Search</div>
+                    <button class="modal-close" onclick="closeSearch()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" class="form-input" id="searchInput" placeholder="Search tasks, subjects, marks..." autocomplete="off">
+                    </div>
+                    <div id="searchResults"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Confirmation Modal -->
+        <div class="modal-overlay" id="confirmModal">
+            <div class="modal">
+                <div class="modal-header">
+                    <div class="modal-title" id="confirmTitle">Confirm</div>
+                    <button class="modal-close" onclick="closeConfirmModal()">&times;</button>
+                </div>
+                <div class="modal-body" id="confirmMessage"></div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" onclick="closeConfirmModal()">Cancel</button>
+                    <button class="btn btn-danger" id="confirmYes" onclick="confirmYes()">Yes</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast Notifications -->
+        <div id="toastContainer" style="position:fixed;top:20px;right:20px;z-index:3000;display:flex;flex-direction:column;gap:10px"></div>
+
+        <!-- Fullscreen Timer Overlay -->
+        <div id="fullscreenTimer" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.9);display:none;align-items:center;justify-content:center;z-index:4000">
+            <div style="text-align:center">
+                <div class="timer-display" id="fullscreenTimerDisplay">00:00:00</div>
+                <div class="timer-controls mt-lg">
+                    <button class="btn btn-secondary" onclick="exitFullscreenTimer()">Exit Fullscreen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load all scripts -->
+    <script src="app.js"></script>
+    <script src="pages.js"></script>
+    <script src="pages2.js"></script>
+    <script src="pages3.js"></script>
+    <script src="pages4.js"></script>
+    <script src="pages5.js"></script>
+    <script src="pages6.js"></script>
+    <script src="pages7.js"></script>
+</body>
+</html>
